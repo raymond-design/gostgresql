@@ -205,3 +205,15 @@ func (pe *pgEngine) executeSelect(stmt *pgquery.SelectStmt) (*pgResult, error) {
 
 	return results, nil
 }
+
+// delete all buckets
+func (pe *pgEngine) delete() error {
+	return pe.db.Update(func(tx *bolt.Tx) error {
+		bkt := tx.Bucket(pe.bucketName)
+		if bkt != nil {
+			return tx.DeleteBucket(pe.bucketName)
+		}
+
+		return nil
+	})
+}
