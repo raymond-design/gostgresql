@@ -22,3 +22,16 @@ func (pf *pgFsm) Snapshot() (raft.FSMSnapshot, error) {
 func (pf *pgFsm) Restore(rc io.ReadCloser) error {
 	return fmt.Errorf("Nothing to restore")
 }
+
+// Sql table definition
+type tableDefinition struct {
+	Name        string
+	ColumnNames []string
+	ColumnTypes []string
+}
+
+type pgResult struct {
+	fieldNames []string
+	fieldTypes []string
+	rows       [][]interface{}
+}
