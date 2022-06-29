@@ -8,7 +8,7 @@ require (
 	github.com/hashicorp/raft v1.3.9
 	github.com/hashicorp/raft-boltdb v0.0.0-20220329195025-15018e9b97e0
 	github.com/jackc/pgproto3/v2 v2.3.0
-	github.com/pganalyze/pg_query_go/v2 v2.1.0
+	github.com/pganalyze/pg_query_go/v2 v2.1.2
 )
 
 require (
